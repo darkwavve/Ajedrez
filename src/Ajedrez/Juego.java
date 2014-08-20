@@ -40,17 +40,16 @@ public class Juego {
         }while(exit == 'Y' || exit =='y');
     }
    private static void imprimirTablero(){
-       System.out.println("1"+tablero[0][0]);
-       System.out.println("2");
-       System.out.println("3");
-       System.out.println("4");
-       System.out.println("5");
-       System.out.println("6");
+       System.out.println("8"+tablero[0][0]);
        System.out.println("7");
-       System.out.println("8");
+       System.out.println("6");
+       System.out.println("5");
+       System.out.println("4");
+       System.out.println("3");
+       System.out.println("2");
+       System.out.println("1");
        System.out.println(" ");
-   }
-   private static void validarMovimiento(){
+   }   private static void validarMovimiento(){
        
    }
    private static void estadistica(){
