@@ -14,17 +14,13 @@ public class Torre extends Pieza {
 
     public Torre(int x, int y, String nombre) {
         super(x, y, nombre);
-        if(y == 1)
-          setNombre(nombre+"B");  
-        if(y == 8)
-          setNombre(nombre+"N");  
     }
 
     @Override
     public void mover(int x, int y) {
-        if(getX() != x && getY()== y)
+        if(x != getX() && y == getY())
             setX(x);
-        if(getX() == x && getY()!= y)
+        if(x == getX() && y != getY())
             setY(y);
     }
 }
