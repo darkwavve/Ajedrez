@@ -15,6 +15,7 @@ import java.util.*;
 public class Juego {
     static Scanner tec = new Scanner(System.in);
     static Pieza[][] tablero;
+    static String espacio = "-----------------------------";
     
    public static void main(String[] args) {
     char exit = 'N';
@@ -26,18 +27,21 @@ public class Juego {
         
         
         switch (opcion){
-            case 1: imprimirTablero();
+            case 1: System.out.println(espacio);
+                imprimirTablero();
             
-            case 2:
+            case 2:System.out.println(espacio);
+                break;
             
-            case 3: System.out.println("Esta segura que desea Salir del Juego");
+            case 3: System.out.println(espacio);
+                System.out.println("Esta seguro que desea salir del juego");
                     exit = tec.next().charAt(0);
                     break;
 
             default:    System.out.println("ESTE COMANDO NO EXISTE");
                 
             }
-        }while(exit == 'Y' || exit =='y');
+        }while(exit == 'N' || exit == 'n');
     }
    private static void imprimirTablero(){
        System.out.println("8"+tablero[0][0]);
