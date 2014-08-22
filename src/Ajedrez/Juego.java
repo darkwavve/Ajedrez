@@ -42,8 +42,10 @@ public class Juego {
             reiniciar();
             do{
             imprimirTablero();
+          System.out.println("Ingrese la posicion de la pieza que desea mover");
             x1 = tec.nextInt();
             y1 = tec.nextInt();
+            System.out.println("Ingrese la posicion donde desea moverla");
             x2 = tec.nextInt();
             y2 = tec.nextInt();
             validarMovimiento(x1,y1,x2,y2);
@@ -80,25 +82,23 @@ public class Juego {
     }
    
    private static void validarMovimiento(int x1,int y1,int x2,int y2){
-       char color1 = tablero[x1][y1].getNombre().charAt(1);
-       char color2 = tablero[x2][y2].getNombre().charAt(1);
-       boolean validar = false;
-       
        if(x1 == -1 && y1 == -1){
            forfeit();
        }
+       if(x1 >= 0 && x2 >= 0 && y1>=0 && y2 >= 0){
+       char color1 = tablero[x1][y1].getNombre().charAt(1);
+       char color2 = tablero[x2][y2].getNombre().charAt(1);
+       
        if(color1 == color2){
            System.out.println("Movimiento Invalido (Piezas del Mismo Color)");
-           validar = true;
            System.out.println(tablero[x1][y1].getNombre()+" "+tablero[x2][y2].getNombre());
        }
  
        if(tablero[x1][y1].mover(x2, y2) == true){
-           System.out.println(tablero[x2][y2].getNombre()+" "+tablero[x1][y1].getNombre());
            tablero[x2][y2] = tablero[x1][y1];
            tablero[x1][y1] = new espacio(x1,y1);
          }
-       
+       }
     }
    
    

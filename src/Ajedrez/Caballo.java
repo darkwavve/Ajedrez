@@ -18,22 +18,37 @@ public class Caballo extends Pieza {
 
     @Override
     public boolean mover(int x, int y) {
-            if(x ==(getX()+2) && y == (getY()+1))
+            if(x ==(getX()+2) && y == (getY()+1)){
+                setX(x);setY(y);
                 return true;
-            if(x ==(getX()+1) && y == (getY()+2))
+            }
+            if(x ==(getX()+1) && y == (getY()+2)){
+                setX(x);setY(y);
                 return true;
-            if(x ==(getX()-2) && y == (getY()-1))
+                }
+            if(x ==(getX()-2) && y == (getY()-1)){
+                setX(x);setY(y);
                 return true;
+            }
             if(x ==(getX()-1) && y == (getY()-2)) 
+                setX(x);setY(y);
                 return true;
-            if(x ==(getX()+2) && y == (getY()-1))
+            if(x ==(getX()+2) &&y == (getY()-1)){
+                setX(x);setY(y);
                 return true;
-            if(x ==(getX()+1) && y == (getY()-2))
+            }
+            if(x ==(getX()+1) && y == (getY()-2)){
+                setX(x);setY(y);
                 return true;
-            if(x ==(getX()-2) && y == (getY()+1))
+            }
+            if(x ==(getX()-2) && y == (getY()+1)){
+                setX(x);setY(y);
                 return true;
-            if(x ==(getX()-1) && y == (getY()+2)) 
+            }
+            if(x ==(getX()-1) && y == (getY()+2)){ 
+                setX(x);setY(y);
                 return true;
+            }
             System.out.println(getX()+" "+getY());
             return false;
         }
