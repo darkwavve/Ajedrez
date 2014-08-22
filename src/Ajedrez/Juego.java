@@ -14,8 +14,9 @@ import java.util.*;
  */
 public class Juego {
     static Scanner tec = new Scanner(System.in);
-    static Pieza[][] tablero = new Pieza [8][8]];
+    static Pieza[][] tablero = new Pieza [8][8];
     static String espacio = "-----------------------------";
+    static boolean turno1 = true;
     
    public static void main(String[] args) {
     char exit = 'N';
