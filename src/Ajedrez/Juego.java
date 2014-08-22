@@ -14,23 +14,33 @@ import java.util.*;
  */
 public class Juego {
     static Scanner tec = new Scanner(System.in);
-    static Pieza[][] tablero = new Pieza [8][8]];
+    static Pieza[][] tablero = new Pieza [8][8];
     static String espacio = "-----------------------------";
+    static String jug1;
+    static String jug2;
     
    public static void main(String[] args) {
     char exit = 'N';
     
        do{
-       System.out.println("----------Menu----------\n1.JUGAR AJEDREZ\n2.ESTADI"
-                + "STICAS\n3.SALIR");
+       System.out.print(espacio+"Menu"+espacio+"\n1.JUGAR AJEDREZ\n2.ESTADI"
+                + "STICAS\n3.SALIR\n\nOpcion: ");
         int opcion = tec.nextInt();
         
         
         switch (opcion){
             case 1: System.out.println(espacio);
+            System.out.println("Ingrese el nombre del jugador 1");
+            jug1 = tec.next();
+            System.out.println("Ingrese el nombre del jugador 2");
+            jug2 = tec.next();
+            System.out.println("\n\n");
             reiniciar();
+            
             imprimirTablero();
-                break;
+            
+            break;
+                
             case 2:System.out.println(espacio);
                 break;
             
@@ -46,16 +56,19 @@ public class Juego {
     }
    private static void imprimirTablero(){
        for(int x = 0; x < 8;x++){
+           System.out.print(x+1+"|");
            for(int y =0; y <8;y++){
-           System.out.print(tablero[x][y]+" ");  
+           System.out.print(tablero[x][y]+"|");  
            }
            System.out.println("");
         }
+       System.out.print(" ");
+       for(int x = 1 ; x< 9; x++){
+           System.out.print(" "+0+x);
+       }
+       System.out.println("");
     }
    
-   private static void validarMovimiento(){
-       
-   }
    private static void estadistica(){
        
    }
