@@ -45,6 +45,11 @@ public class Juego {
             reiniciar();
             do{
             imprimirTablero();
+              if(turno1==true){
+                  System.out.println("Turno de: "+jug1);
+              }else{
+                  System.out.println("Turno de: "+jug2);
+              }
                     valido = false;
 
         do { 
@@ -54,6 +59,7 @@ public class Juego {
             y1 = tec.nextInt();
             if(x1 == -1 && y1 == -1){
            forfeit();
+           break;
         }
             System.out.println("Ingrese la posicion donde desea moverla");
             x2 = tec.nextInt();
@@ -68,8 +74,11 @@ public class Juego {
               if(color1 == color2){
            System.out.println("Movimiento Invalido (Piezas del Mismo Color)");
            valido = false;
+              }else if(color1=='N' && turno1==true){
+                  valido = false;
+              }else if(color1=='B' && turno1==false){ 
+                  valido = false;
               }else{
-                  
                   valido = true;
        }
             }
