@@ -21,7 +21,15 @@ public class Juego {
 
     static String jug1;
     static String jug2;
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+    static boolean salir;
+=======
+>>>>>>> origin/branch1
+>>>>>>> origin/branch1
+>>>>>>> origin/branch1
     
    public static void main(String[] args) {
     char exit = 'N';
@@ -40,9 +48,11 @@ public class Juego {
             jug2 = tec.next();
             System.out.println("\n\n");
             reiniciar();
-            
+            do{
             imprimirTablero();
-            
+                
+            salir = true;
+            }while(salir == true);
             break;
                 
             case 2:System.out.println(espacio);

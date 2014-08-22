@@ -17,10 +17,11 @@ public class Torre extends Pieza {
     }
 
     @Override
-    public void mover(int x, int y) {
+    public boolean mover(int x, int y) {
         if(x != getX() && y == getY())
-            setX(x);
+            return true;
         if(x == getX() && y != getY())
-            setY(y);
+            return true;
+        return false;
     }
 }

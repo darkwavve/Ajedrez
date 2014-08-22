@@ -17,18 +17,20 @@ public class Peon extends Pieza {
     }
 
     @Override
-    public void mover(int x, int y) {
-        if (getY() == 2)
+    public boolean mover(int x, int y) {
+        if (getY() == 2){
             if(y<=2 && y>0)
-                setY(getY()+y);
-            
-        if (getY() == 7)
+            return true;
+        }
+        if (getY() == 7){
             if(y<=2 && y>0)
-                setY(getY()-y);
-       
-        if(getY() != 2 && getY() != 7)
+                return true;
+        }
+        if(getY() != 2 && getY() != 7){
             if(y == 1)
-                setY(getY()+y);
+                return true;
+        }
+        return false;
     }
 }    
  

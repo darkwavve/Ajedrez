@@ -45,7 +45,7 @@ public abstract class Pieza {
         this.y = y;
     }
    
-   public abstract void mover(int x, int y);
+   public abstract boolean mover(int x, int y);
    
    public void comer(int x, int y, String nombre){
        if (x<8 || y <8)
