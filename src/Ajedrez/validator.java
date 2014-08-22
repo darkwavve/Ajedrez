@@ -94,7 +94,5 @@ public class validator {
     private static void forfeit(){
        System.out.println("Esta seguro que desea salir del juego? (y = si)"); 
        char opc = tec.next().charAt(0);
-       if(opc=='y')
-       salir = true;   
     } 
 }
