@@ -84,15 +84,15 @@ public class Juego {
    private static void validarMovimiento(int x1,int y1,int x2,int y2){
        char color1 = tablero[x1][y1].getNombre().charAt(1);
        char color2 = tablero[x2][y2].getNombre().charAt(1);
-       boolean validar = false;
+       
        
        if(x1 == -1 && y1 == -1){
            forfeit();
        }
        if(color1 == color2){
            System.out.println("Movimiento Invalido (Piezas del Mismo Color)");
-           validar = true;
            System.out.println(tablero[x1][y1].getNombre()+" "+tablero[x2][y2].getNombre());
+           
        }
  
        if(tablero[x1][y1].mover(x2, y2) == true){
@@ -105,7 +105,9 @@ public class Juego {
    
    
    private static void forfeit(){
-       System.out.println("Esta seguro de salir del juego"); 
+       System.out.println("Esta seguro que desea salir del juego? (y = si)"); 
+       char opc = tec.next().charAt(0);
+       if(opc=='y')
        salir = true;   
     } 
            
