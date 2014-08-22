@@ -44,8 +44,10 @@ public class Juego {
             reiniciar();
             do{
             imprimirTablero();
+          System.out.println("Ingrese la posicion de la pieza que desea mover");
             x1 = tec.nextInt();
             y1 = tec.nextInt();
+            System.out.println("Ingrese la posicion donde desea moverla");
             x2 = tec.nextInt();
             y2 = tec.nextInt();
             validarMovimiento(x1,y1,x2,y2);
@@ -88,7 +90,7 @@ public class Juego {
        
        if(x1 == -1 && y1 == -1){
            forfeit();
-       }
+       }   
        if(color1 == color2){
            System.out.println("Movimiento Invalido (Piezas del Mismo Color)");
            System.out.println(tablero[x1][y1].getNombre()+" "+tablero[x2][y2].getNombre());
@@ -96,14 +98,12 @@ public class Juego {
        }
  
        if(tablero[x1][y1].mover(x2, y2) == true){
-           System.out.println(tablero[x2][y2].getNombre()+" "+tablero[x1][y1].getNombre());
            tablero[x2][y2] = tablero[x1][y1];
            tablero[x1][y1] = new espacio(x1,y1);
          }
-       
-    }
-   
-   
+       }
+
+    
    private static void forfeit(){
        System.out.println("Esta seguro que desea salir del juego? (y = si)"); 
        char opc = tec.next().charAt(0);
