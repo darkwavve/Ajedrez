@@ -12,7 +12,7 @@ import static Ajedrez.Juego.tablero;
  *
  * @author Jesus
  */
-public class Recursivas {
+public final class Recursivas {
     
     public int contBlanco(int j,int x,int y, int g){ //j se inicializa en 63 siempre, x en 8 y 'y' en 8, g es siempre 16
        char color = tablero[x][y].getNombre().charAt(1);
@@ -37,7 +37,7 @@ public class Recursivas {
                 x=8;
                 y-=1;
             }
-                if(color=='B'){
+                if(color=='N'){
             return contNegro(j-1,x-1,y,g-1);
         }else{
                 return contNegro(j-1,x-1,y,g);  

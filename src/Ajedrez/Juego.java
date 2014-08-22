@@ -21,15 +21,9 @@ public class Juego {
 
     static String jug1;
     static String jug2;
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
     static boolean salir;
-=======
->>>>>>> origin/branch1
->>>>>>> origin/branch1
->>>>>>> origin/branch1
+
     
    public static void main(String[] args) {
     char exit = 'N';
