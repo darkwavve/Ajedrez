@@ -18,7 +18,10 @@ public class Rey extends Pieza {
 
     @Override
     public void mover(int x, int y) {
-    
+     if(x==getX()+1 || x==getX()-1 && y==getY()+1 || y==getY()-1){
+         setX(x);
+     setY(y);
+     }
     }
     
 }
