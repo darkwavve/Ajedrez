@@ -6,6 +6,8 @@
 
 package Ajedrez;
 
+import static Ajedrez.Recursivas.contBlanco;
+import static Ajedrez.Recursivas.contNegro;
 import java.util.*;
 
 /**
@@ -96,6 +98,22 @@ public class Juego {
            tablero[x2][y2] = tablero[x1][y1];
            tablero[x1][y1] = new espacio(x1,y1);
            }
+        }
+        if(turno1==true){
+              System.out.println(jug1+ " se comio una ficha de " + jug2 + " con su "+ tablero[x1][y1].getNombre());
+           }else{
+               System.out.println(jug2+ " se comio una ficha de " + jug1 + " con su "+ tablero[x1][y1].getNombre());
+           }
+        
+        if(tablero[x2][y2] instanceof Rey){
+            if(turno1==true){
+              System.out.println(jug1+ " gano la partido, comiendo " + contNegro(63,8,8,16)+" piezas del jugador " + jug2);
+              estado.add(jug1+ " gano la partido, comiendo " + contNegro(63,8,8,16)+" piezas del jugador " + jug2);
+           }else{
+               System.out.println(jug2+ " gano la partido, comiendo " + contBlanco(63,8,8,16)+" piezas del jugador " + jug1);
+               estado.add(jug2+ " gano la partido, comiendo " + contBlanco(63,8,8,16)+" piezas del jugador " + jug1);
+           }
+            break;
         }
         
         if(tablero[x1][y1].mover(x2, y2) == true){
