@@ -14,10 +14,6 @@ public class Caballo extends Pieza {
 
     public Caballo(int x, int y, String nombre) {
         super(x, y, nombre);
-        if(y == 1)
-          setNombre(nombre+"B");  
-        if(y == 8)
-          setNombre(nombre+"N");  
     }
 
     @Override

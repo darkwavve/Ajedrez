@@ -14,11 +14,7 @@ public class Alfil extends Pieza{
 
     public Alfil(int x, int y, String nombre) {
         super(x, y, nombre);
-        if(y == 1)
-          setNombre(nombre+"B");  
-        if(y == 8)
-          setNombre(nombre+"N");  
-    }
+      }
 
     @Override
     public void mover(int x, int y) {

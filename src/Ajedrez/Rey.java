@@ -10,6 +10,15 @@ package Ajedrez;
  *
  * @author Diaz
  */
-public class Rey {
+public class Rey extends Pieza {
+
+    public Rey(int x, int y, String nombre) {
+        super(x, y, nombre);
+        }
+
+    @Override
+    public void mover(int x, int y) {
+    
+    }
     
 }
