@@ -18,6 +18,7 @@ public class Juego {
     static String espacio = "-----------------------------";
     static String jug1;
     static String jug2;
+    static boolean salir;
     
    public static void main(String[] args) {
     char exit = 'N';
@@ -36,9 +37,11 @@ public class Juego {
             jug2 = tec.next();
             System.out.println("\n\n");
             reiniciar();
-            
+            do{
             imprimirTablero();
-            
+                
+            salir = true;
+            }while(salir == true);
             break;
                 
             case 2:System.out.println(espacio);
