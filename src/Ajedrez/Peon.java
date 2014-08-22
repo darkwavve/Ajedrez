@@ -24,7 +24,7 @@ public class Peon extends Pieza {
                     return true;
             if(getX() != 6 || getX() != 1){
                 if(x - getX() <= 1 && x - getX() >= -1)
-                   x|return true;
+                   return true;
             }
             
             }

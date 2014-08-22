@@ -16,8 +16,7 @@ public class Juego {
     static Scanner tec = new Scanner(System.in);
     static Pieza[][] tablero = new Pieza [8][8];
     static String espacio = "-----------------------------";
-<<<<<<< HEAD
-  static boolean turno1 = true;
+    static boolean turno1 = true;
     static String jug1;
     static String jug2;
     static boolean salir = false;
@@ -25,18 +24,6 @@ public class Juego {
     static int contN,contB,x1,y1,x2,y2;
    
     public static void main(String[] args) {
-=======
-
-    static boolean turno1 = true;
-
-    static String jug1;
-    static String jug2;
-
-    static boolean salir;
-
-    
-   public static void main(String[] args) {
->>>>>>> origin/branch1
     char exit = 'N';
     
        do{
