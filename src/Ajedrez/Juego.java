@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class Juego {
     static Scanner tec = new Scanner(System.in);
-    static Pieza[][] tablero;
+    static Pieza[][] tablero = new Pieza [8][8]];
     static String espacio = "-----------------------------";
     
    public static void main(String[] args) {
@@ -28,8 +28,9 @@ public class Juego {
         
         switch (opcion){
             case 1: System.out.println(espacio);
-                imprimirTablero();
-            
+            reiniciar();
+            imprimirTablero();
+                break;
             case 2:System.out.println(espacio);
                 break;
             
@@ -44,22 +45,57 @@ public class Juego {
         }while(exit == 'N' || exit == 'n');
     }
    private static void imprimirTablero(){
-       System.out.println("8"+tablero[0][0]);
-       System.out.println("7");
-       System.out.println("6");
-       System.out.println("5");
-       System.out.println("4");
-       System.out.println("3");
-       System.out.println("2");
-       System.out.println("1");
-       System.out.println(" ");
-   }   private static void validarMovimiento(){
+       for(int x = 0; x < 8;x++){
+           for(int y =0; y <8;y++){
+           System.out.print(tablero[x][y]+" ");  
+           }
+           System.out.println("");
+        }
+    }
+   
+   private static void validarMovimiento(){
        
    }
    private static void estadistica(){
        
    }
-   private static void reiniciar(){
-    Pieza tablero[][] = new Pieza [8][8];   
+   private static void reiniciar(){  
+        for(int x = 0 ; x<8;x++){
+            for(int y = 0; y < 8;y++){
+                if(x == 0){
+                    if(y == 0 || y == 7)
+                        tablero[x][y] = new Torre(x,y,"TN");
+                    if(y == 1 || y == 6)
+                        tablero[x][y] = new Caballo(x,y,"CN");
+                    if(y == 2 || y == 5)
+                        tablero[x][y] = new Alfil(x,y,"AN");
+                    if(y == 3)
+                        tablero[x][y] = new Reina(x,y,"DN");
+                    if(y == 4)
+                        tablero[x][y] = new Rey(x,y,"RN");
+                }
+                if(x == 1){
+                    tablero[x][y] = new Peon(x,y,"PN");
+                }
+                if(x >= 2 && x <= 5){
+                    tablero[x][y] = new espacio(x,y);
+                }
+                if(x == 7){
+                    if(y == 0 || y == 7)
+                        tablero[x][y] = new Torre(x,y,"TB");
+                    if(y == 1 || y == 6)
+                        tablero[x][y] = new Caballo(x,y,"CB");
+                    if(y == 2 || y == 5)
+                        tablero[x][y] = new Alfil(x,y,"AB");
+                    if(y == 3)
+                        tablero[x][y] = new Reina(x,y,"DB");
+                    if(y == 4)
+                        tablero[x][y] = new Rey(x,y,"RB");
+                }
+                if(x == 6){
+                    tablero[x][y] = new Peon(x,y,"PB");
+                }
+            }
+        }
    }
 }

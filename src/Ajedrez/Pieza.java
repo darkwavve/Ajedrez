@@ -54,8 +54,7 @@ public abstract class Pieza {
 
     @Override
     public String toString() {
-        return "Pieza" + "\nPosicionX = " + x + "\nPosicionY = " + y + "\nNomb"
-                + "re Pieza=" + nombre;
+        return nombre;
     }
 
    
