@@ -69,17 +69,27 @@ public class Juego {
            System.out.println("Movimiento Invalido (Piezas del Mismo Color)");
            valido = false;
               }else{
-                  
                   valido = true;
        }
             }
         } while (valido == false);
-    
-        if(tablero[x1][y1].mover(x2, y2) == true){
-           System.out.println(tablero[x2][y2].getNombre()+" "+tablero[x1][y1].getNombre());
+        if(tablero[x1][y1] instanceof Peon){
+           if(tablero[x1][y1].comer(x2, y2) == true){
            tablero[x2][y2] = tablero[x1][y1];
            tablero[x1][y1] = new espacio(x1,y1);
-         }
+           }
+        }
+        
+        if(tablero[x1][y1].mover(x2, y2) == true){
+           tablero[x2][y2] = tablero[x1][y1];
+           tablero[x1][y1] = new espacio(x1,y1);
+           if(turno1 == true){
+               turno1=false;
+           }else{
+               turno1=true;
+            }
+        }
+        
     }while(salir == false);
             
             break;
