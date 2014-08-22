@@ -24,6 +24,7 @@ public class Juego {
     static char conf;
     static int contN,contB,x1,y1,x2,y2;
     static boolean valido;
+    static ArrayList<String> estado=new ArrayList<>();
     
     public static void main(String[] args) {
 
@@ -59,6 +60,11 @@ public class Juego {
             y1 = tec.nextInt();
             if(x1 == -1 && y1 == -1){
            forfeit();
+           if(turno1==true){
+               estado.add(jug1 + " se retiro, dejando a " + jug2 + " como ganador.");
+           }else{
+               estado.add(jug2 + " se retiro, dejando a " + jug1 + " como ganador.");
+           }
            break;
         }
             System.out.println("Ingrese la posicion donde desea moverla");
@@ -77,6 +83,8 @@ public class Juego {
               }else if(color1=='N' && turno1==true){
                   valido = false;
               }else if(color1=='B' && turno1==false){ 
+                  valido = false;
+              }else if(color1=='-'){
                   valido = false;
               }else{
                   valido = true;
@@ -105,10 +113,11 @@ public class Juego {
             break;
                 
             case 2:System.out.println(espacio);
+            estadistica();
                 break;
             
             case 3: System.out.println(espacio);
-                System.out.println("Esta seguro que desea salir del juego");
+                System.out.println("Esta seguro que desea salir del juego? (n = no)");
                     exit = tec.next().charAt(0);
                     break;
 
@@ -160,8 +169,19 @@ public class Juego {
        salir = true;   
     } 
            
-   private static void estadistica(String jug1, String jug2,String cont){
-        
+   private static void estadistica(){
+        if(estado.isEmpty()){
+            System.out.println("No se han jugado juegos todavia!");    
+        }else{
+            int x = 0;
+            for(String e: estado){
+                System.out.println(e);
+                x++;
+                if(x==10){
+                    break;
+                }
+            }
+        }
    }
    private static void reiniciar(){  
         for(int x = 0 ; x<8;x++){
