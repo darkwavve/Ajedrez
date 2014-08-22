@@ -17,19 +17,18 @@ public class Alfil extends Pieza{
       }
 
     @Override
-    public void mover(int x, int y) {
+    public boolean mover(int x, int y) {
         if((getX()%2== 0 && getY()%2== 1) || (getX()%2== 1 && getY()%2== 0)){
             if((x % 2 == 0 && y % 2 == 1) || (x % 2 == 1 && y % 2 == 0)){
-                setX(x);
-                setY(y);
+                return true;
             }
         }
         if((getX()%2== 1 && getY()%2== 1) || (getX()%2== 0 && getY()%2== 0)){
             if( (x % 2 == 0 && y % 2 == 0) || (x % 2 == 1 && y % 2 == 1)){
-                setX(x);
-                setY(y);
+                return true;
             }
         }
+        return false;
     }
     
 }

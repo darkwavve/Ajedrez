@@ -18,15 +18,23 @@ public class Caballo extends Pieza {
 
     @Override
     public boolean mover(int x, int y) {
-        if(x != getX() && y != getY())
             if(x ==(getX()+2) && y == (getY()+1))
                 return true;
             if(x ==(getX()+1) && y == (getY()+2))
                 return true;
             if(x ==(getX()-2) && y == (getY()-1))
                 return true;
-            if(x ==(getX()-1) && y == (getY()-2))
+            if(x ==(getX()-1) && y == (getY()-2)) 
                 return true;
+            if(x ==(getX()+2) && y == (getY()-1))
+                return true;
+            if(x ==(getX()+1) && y == (getY()-2))
+                return true;
+            if(x ==(getX()-2) && y == (getY()+1))
+                return true;
+            if(x ==(getX()-1) && y == (getY()+2)) 
+                return true;
+            System.out.println(getX()+" "+getY());
             return false;
         }
     }

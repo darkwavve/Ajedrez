@@ -18,9 +18,7 @@ public class Torre extends Pieza {
 
     @Override
     public boolean mover(int x, int y) {
-        if(x != getX() && y == getY())
-            return true;
-        if(x == getX() && y != getY())
+        if(x != getX() || y != getY())
             return true;
         return false;
     }

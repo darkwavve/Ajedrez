@@ -16,18 +16,14 @@ public class Juego {
     static Scanner tec = new Scanner(System.in);
     static Pieza[][] tablero = new Pieza [8][8];
     static String espacio = "-----------------------------";
-<<<<<<< HEAD
-    static boolean turno1 = true;
-=======
+  static boolean turno1 = true;
     static String jug1;
     static String jug2;
-<<<<<<< HEAD
-    static boolean salir;
-=======
->>>>>>> origin/branch1
->>>>>>> origin/branch1
-    
-   public static void main(String[] args) {
+    static boolean salir = false;
+    static char conf;
+    static int contN,contB,x1,y1,x2,y2;
+   
+    public static void main(String[] args) {
     char exit = 'N';
     
        do{
@@ -46,9 +42,13 @@ public class Juego {
             reiniciar();
             do{
             imprimirTablero();
-                
-            salir = true;
-            }while(salir == true);
+            x1 = tec.nextInt();
+            y1 = tec.nextInt();
+            x2 = tec.nextInt();
+            y2 = tec.nextInt();
+            validarMovimiento(x1,y1,x2,y2);
+            }while(salir == false);
+            
             break;
                 
             case 2:System.out.println(espacio);
@@ -66,21 +66,49 @@ public class Juego {
     }
    private static void imprimirTablero(){
        for(int x = 0; x < 8;x++){
-           System.out.print(x+1+"|");
+           System.out.print(x+"|");
            for(int y =0; y <8;y++){
            System.out.print(tablero[x][y]+"|");  
            }
            System.out.println("");
         }
-       System.out.print(" ");
-       for(int x = 1 ; x< 9; x++){
-           System.out.print(" "+0+x);
+       System.out.print("  ");
+       for(int x = 0 ; x< 8; x++){
+           System.out.print(" "+x+" ");
        }
        System.out.println("");
     }
    
-   private static void estadistica(){
+   private static void validarMovimiento(int x1,int y1,int x2,int y2){
+       char color1 = tablero[x1][y1].getNombre().charAt(1);
+       char color2 = tablero[x2][y2].getNombre().charAt(1);
+       boolean validar = false;
        
+       if(x1 == -1 && y1 == -1){
+           forfeit();
+       }
+       if(color1 == color2){
+           System.out.println("Movimiento Invalido (Piezas del Mismo Color)");
+           validar = true;
+           System.out.println(tablero[x1][y1].getNombre()+" "+tablero[x2][y2].getNombre());
+       }
+ 
+       if(tablero[x1][y1].mover(x2, y2) == true){
+           System.out.println(tablero[x2][y2].getNombre()+" "+tablero[x1][y1].getNombre());
+           tablero[x2][y2] = tablero[x1][y1];
+           tablero[x1][y1] = new espacio(x1,y1);
+         }
+       
+    }
+   
+   
+   private static void forfeit(){
+       System.out.println("Esta seguro de salir del juego"); 
+       salir = true;   
+    } 
+           
+   private static void estadistica(String jug1, String jug2,String cont){
+        
    }
    private static void reiniciar(){  
         for(int x = 0 ; x<8;x++){
@@ -110,9 +138,9 @@ public class Juego {
                         tablero[x][y] = new Caballo(x,y,"CB");
                     if(y == 2 || y == 5)
                         tablero[x][y] = new Alfil(x,y,"AB");
-                    if(y == 3)
-                        tablero[x][y] = new Reina(x,y,"DB");
                     if(y == 4)
+                        tablero[x][y] = new Reina(x,y,"DB");
+                    if(y == 3)
                         tablero[x][y] = new Rey(x,y,"RB");
                 }
                 if(x == 6){
