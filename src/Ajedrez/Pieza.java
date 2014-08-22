@@ -47,9 +47,9 @@ public abstract class Pieza {
    
    public abstract boolean mover(int x, int y);
    
-   public void comer(int x, int y, String nombre){
-       if (x<8 || y <8)
-           setNombre(nombre);
+   public boolean comer(int x, int y){
+       mover(x,y);
+       return false;
    } 
 
     @Override

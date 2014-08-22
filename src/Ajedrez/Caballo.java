@@ -30,9 +30,10 @@ public class Caballo extends Pieza {
                 setX(x);setY(y);
                 return true;
             }
-            if(x ==(getX()-1) && y == (getY()-2)) 
+            if(x ==(getX()-1) && y == (getY()-2)){ 
                 setX(x);setY(y);
                 return true;
+            }
             if(x ==(getX()+2) &&y == (getY()-1)){
                 setX(x);setY(y);
                 return true;
